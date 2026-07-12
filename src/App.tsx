@@ -843,6 +843,56 @@ export default function App() {
             label: 'AVERAGE',
             feedback: 'Initial benchmark run. High lateral shift on plant leg. Hip rotation was slow on snap. Work on locking strike ankle and parallel anchoring.',
             tips: ['Focus heavily on plant leg stability first.', 'Increase run-up angle to 45 degrees.']
+          },
+          {
+            id: 'seed-6',
+            userId: user.id,
+            date: 'Nov 02 at 09:45',
+            scores: { plantLegStability: 94, hipRotation: 91, strikeLegExtension: 93, followThrough: 90, recoveryBalance: 95 },
+            overallScore: 93,
+            label: 'OPTIMAL',
+            feedback: 'World-class execution. Kinetic chain was perfectly synchronized — plant leg anchored like a piston, hip rotation generated elite torque, and the follow-through was textbook. This is Premier League match-ready form.',
+            tips: ['Continue this exact pre-shot routine for consistency.', 'Work on varying corner placement while maintaining this form.']
+          },
+          {
+            id: 'seed-7',
+            userId: user.id,
+            date: 'Oct 28 at 16:10',
+            scores: { plantLegStability: 88, hipRotation: 84, strikeLegExtension: 86, followThrough: 82, recoveryBalance: 79 },
+            overallScore: 84,
+            label: 'GOOD',
+            feedback: 'Strong session with noticeable improvement in hip drive. The strike leg extended fully through the ball, but recovery balance lagged slightly as you leaned back on contact — common when trying to generate extra power.',
+            tips: ['Keep your chest over the ball at impact to maintain balance.', 'Drive your kicking leg forward, not upward.']
+          },
+          {
+            id: 'seed-8',
+            userId: user.id,
+            date: 'Oct 19 at 13:30',
+            scores: { plantLegStability: 55, hipRotation: 58, strikeLegExtension: 62, followThrough: 50, recoveryBalance: 52 },
+            overallScore: 56,
+            label: 'NEEDS WORK',
+            feedback: 'Several mechanical breakdowns detected. Plant foot was pointing away from target, causing the hips to open early and killing power transfer. Follow-through was cut short by more than 40%. This is fixable with focused drill work.',
+            tips: ['Practice plant foot placement with slow-motion walk-ups.', 'Exaggerate follow-through — aim to land on your kicking foot.']
+          },
+          {
+            id: 'seed-9',
+            userId: user.id,
+            date: 'Oct 15 at 10:00',
+            scores: { plantLegStability: 72, hipRotation: 68, strikeLegExtension: 70, followThrough: 74, recoveryBalance: 76 },
+            overallScore: 72,
+            label: 'AVERAGE',
+            feedback: 'Decent foundation but inconsistent hip engagement. Your plant leg stability has improved 12% since last session, but the hip rotation is still 20ms delayed relative to strike contact. Good news: the recovery balance metrics show strong core engagement.',
+            tips: ['Use a resistance band around your hips during practice to build rotational explosiveness.', 'Film from a 45-degree rear angle to check hip clearance.']
+          },
+          {
+            id: 'seed-10',
+            userId: user.id,
+            date: 'Oct 07 at 14:55',
+            scores: { plantLegStability: 82, hipRotation: 79, strikeLegExtension: 77, followThrough: 85, recoveryBalance: 88 },
+            overallScore: 82,
+            label: 'GOOD',
+            feedback: 'Vast improvement in recovery balance — core stability work is paying off. Hip rotation is approaching optimal range, but strike leg extension stalls at 87% of full lockout. The ball is getting to the goal but losing 5-8% of potential velocity.',
+            tips: ['Incorporate hamstring and glute explosive drills to max out strike extension.', 'Practice striking a stationary ball with full extension before adding the run-up.']
           }
         ];
         setSessions(seeded);
