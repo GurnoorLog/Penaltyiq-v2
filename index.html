@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PenaltyIQ | Neo-Brutalist AI Analysis</title>
+    <script>
+      // Global Defensive Safeguard Patches for Sandboxed Environments
+      (function() {
+        // Patch 1: window.fetch getter/setter error bypass
+        try {
+          const originalFetch = window.fetch || globalThis.fetch;
+          if (originalFetch) {
+            let currentFetch = originalFetch;
+            
+            const targets = [
+              window,
+              globalThis,
+              typeof Window !== 'undefined' ? Window.prototype : null,
+              typeof window !== 'undefined' ? Object.getPrototypeOf(window) : null,
+              typeof globalThis !== 'undefined' ? Object.getPrototypeOf(globalThis) : null
+            ].filter(Boolean);
+            
+            for (const target of targets) {
+              try {
+                const desc = Object.getOwnPropertyDescriptor(target, 'fetch');
+                if (desc && !desc.configurable) {
+                  continue;
+                }
+                Object.defineProperty(target, 'fetch', {
+                  configurable: true,
+                  enumerable: true,
+                  get() {
+                    return currentFetch;
+                  },
+                  set(val) {
+                    currentFetch = val;
+                  }
+                });
+              } catch (e) {
+                // Silent catch
+              }
+            }
+          }
+        } catch (e) {
+          console.warn("Bypassed fetch redefining limit:", e);
+        }
+
+        // Patch 2: getBoundingClientRect fallback for HTMLCanvasElement and OffscreenCanvas
+        try {
+          const createFallbackRect = function() {
+            const w = this.width || 640;
+            const h = this.height || 360;
+            return {
+              top: 0,
+              left: 0,
+              right: w,
+              bottom: h,
+              width: w,
+              height: h,
+              x: 0,
+              y: 0,
+              toJSON: function() { return this; }
+            };
+          };
+
+          if (typeof HTMLCanvasElement !== 'undefined') {
+            try {
+              if (!HTMLCanvasElement.prototype.getBoundingClientRect || typeof HTMLCanvasElement.prototype.getBoundingClientRect !== 'function') {
+                Object.defineProperty(HTMLCanvasElement.prototype, 'getBoundingClientRect', {
+                  value: createFallbackRect,
+                  writable: true,
+                  configurable: true,
+                  enumerable: true
+                });
+              }
+            } catch (e) {
+              try {
+                HTMLCanvasElement.prototype.getBoundingClientRect = createFallbackRect;
+              } catch (err) {}
+            }
+          }
+          if (typeof OffscreenCanvas !== 'undefined') {
+            try {
+              if (!OffscreenCanvas.prototype.getBoundingClientRect || typeof OffscreenCanvas.prototype.getBoundingClientRect !== 'function') {
+                Object.defineProperty(OffscreenCanvas.prototype, 'getBoundingClientRect', {
+                  value: createFallbackRect,
+                  writable: true,
+                  configurable: true,
+                  enumerable: true
+                });
+              }
+            } catch (e) {
+              try {
+                OffscreenCanvas.prototype.getBoundingClientRect = createFallbackRect;
+              } catch (err) {}
+            }
+          }
+        } catch (e) {
+          console.warn("Bypassed canvas getBoundingClientRect patching limit:", e);
+        }
+      })();
+    </script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Space+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
