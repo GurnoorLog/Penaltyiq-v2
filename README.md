@@ -70,7 +70,7 @@ Those get normalized and combined into the fingerprint and its sub-scores. This 
 
 **Local AI coaching.** The measurements are passed to the coaching layer as structured data. It doesn't touch the geometry; its job is to translate the numbers into feedback an athlete can act on. If your plant-leg score is low, it says your plant knee may need more flexion for a stable contact, instead of just dumping a number at you.
 
-**Interface.** The dashboard keeps the video, the skeleton, live metrics, the fingerprint, coaching, and history in one place. I went with a bold, high-contrast look so results are readable at a glance — which mattered during the hackathon demo, when people had maybe ten seconds.
+**Interface.** The dashboard keeps the video, the skeleton, live metrics, the fingerprint, coaching, and history in one place. I went with a bold, high-contrast look so results are readable at a glance.
 
 ## Challenges I ran into
 
@@ -82,9 +82,9 @@ Those get normalized and combined into the fingerprint and its sub-scores. This 
 
 **Local AI integration.** Wiring up the coaching layer took more than generating text: structured prompts, response formatting, processing time, fallback behavior. It was worth it — the core analysis runs locally, and no athlete footage ever goes to a server.
 
-**Design vs. depth.** The app is technically dense, but judges and athletes had to get it in seconds. I kept raw coordinates, terminal output, and jargon out of the UI while still showing the processing was real.
+**Design vs. depth.** The app is technically dense, but athletes still need to get it in seconds. I kept raw coordinates, terminal output, and jargon out of the UI while still showing the processing was real.
 
-**Hackathon scope.** There was a long list of tempting extras — automatic contact detection, comparison mode, fancier reports, multi-sport support. I cut most of them so the core workflow actually worked end to end.
+**Scope control.** There was a long list of tempting extras — automatic contact detection, comparison mode, fancier reports, multi-sport support. I cut most of them so the core workflow actually worked end to end.
 
 ## Accomplishments I'm proud of
 
