@@ -1,0 +1,10 @@
+{
+  "name": "Remix: PenaltyIQ",
+  "description": "AI-driven penalty coach that analyzes body mechanics through video to provide 3D visualizations, technique scores, and conversational coaching feedback.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
