@@ -84,7 +84,7 @@ Those get normalized and combined into the fingerprint and its sub-scores. This 
 
 **Design vs. depth.** The app is technically dense, but athletes still need to get it in seconds. I kept raw coordinates, terminal output, and jargon out of the UI while still showing the processing was real.
 
-**Scope control.** There was a long list of tempting extras — automatic contact detection, comparison mode, fancier reports, multi-sport support. I cut most of them so the core workflow actually worked end to end.
+**Scope control.** There was a long list of tempting extras — automatic contact detection, comparison mode, fancier reports, multi-sport support. I cut most of them so the core workflow actually worked end to end. This is only v1 — v2 is coming, stay tuned.
 
 ## Accomplishments I'm proud of
 
